@@ -24,5 +24,39 @@ Make sure you have **Python 3.x** installed.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
-cd YOUR_REPOSITORY_NAME
+git clone https://github.com/dharmendra779089/Guess-the-Number.git
+cd Guess-the-Number
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run Locally
+```bash
+python main.py
+```
+Open your browser and navigate to `http://127.0.0.1:5000/`. Try guessing by appending a number to the URL (e.g. `http://127.0.0.1:5000/5`).
+
+---
+
+## 🌐 Deploying to Render
+
+This project includes a `render.yaml` Blueprint configuration for easy deployment on Render.
+
+1. **Push your code to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Add production configs for Render"
+   git push origin main
+   ```
+2. **Connect to Render**:
+   - Log in to [Render Dashboard](https://dashboard.render.com/).
+   - Click **New +** -> **Web Service** (or **Blueprints**).
+   - Connect your GitHub repository `dharmendra779089/Guess-the-Number`.
+3. **Configuration Settings**:
+   - **Environment:** `Python 3`
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `gunicorn main:app`
+4. Click **Deploy Web Service**.
